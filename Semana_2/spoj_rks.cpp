@@ -41,8 +41,7 @@ void bubbleSortByTimes(vector<pair<int, pair<int,int>>> &data)
 
     for (i = 0; i < n - 1; i++) 
   
-        // Last i elements are already 
-        // in place 
+        // Last i elements are already in place
         for (j = 0; j < n - i - 1; j++) 
             if (data[j].second.first < data[j + 1].second.first) 
                 swap(data[j], data[j + 1]); 
@@ -55,8 +54,7 @@ void bubbleSortByIndex(vector<pair<int, pair<int,int>>> &data)
 
     for (i = 0; i < n - 1; i++) 
   
-        // Last i elements are already 
-        // in place 
+        // Last i elements are already in place
         for (j = 0; j < n - i - 1; j++) 
             if (data[j].second.first == data[j + 1].second.first && data[j].second.second > data[j + 1].second.second) 
                 swap(data[j], data[j + 1]); 
