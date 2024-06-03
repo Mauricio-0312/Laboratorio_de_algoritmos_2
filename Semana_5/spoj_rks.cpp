@@ -39,15 +39,15 @@ ocurrencias tengamos almacenadas en el par.
 using namespace std;
 
 
-// function to rearrange vector (find the partition point)
+// Function to rearrange vector (find the partition point)
 int partitionByOcurrences(vector<pair<int, pair<int,int>>>& data, int low, int high) {
-    // select the rightmost element as pivot
+    // Select the rightmost element as pivot
     int pivot = data[high].second.first;
 
-    // pointer for smaller element
+    // Pointer for smaller element
     int i = (low - 1);
 
-    // traverse each element of the vector
+    // Traverse each element of the vector
     // compare them with the pivot
     for (int j = low; j < high; j++) {
         if (data[j].second.first >= pivot) {
@@ -55,44 +55,44 @@ int partitionByOcurrences(vector<pair<int, pair<int,int>>>& data, int low, int h
             // swap it with the smaller element pointed by i
             i++;
 
-            // swap element at i with element at j
+            // Swap element at i with element at j
             swap(data[i], data[j]);
         }
     }
 
-    // swap pivot with the smaller element at i + 1
+    // Swap pivot with the smaller element at i + 1
     swap(data[i + 1], data[high]);
 
-    // return the partition point
+    // Return the partition point
     return (i + 1);
 }
 
-// Quick sort algorithm
+// Quick sort algorithm to sort by ocurrences of numbers in descending order
 void quickSortByOcurrences(vector<pair<int, pair<int,int>>>& data, int low, int high) {
     if (low < high) {
-        // find the pivot element such that
+        // Find the pivot element such that
         // elements greater than pivot are on left of pivot
         // elements smaller than pivot are on right of pivot
         int pi = partitionByOcurrences(data, low, high);
 
-        // recursive call on the left of pivot
+        // Recursive call on the left of pivot
         quickSortByOcurrences(data, low, pi - 1);
 
-        // recursive call on the right of pivot
+        // Recursive call on the right of pivot
         quickSortByOcurrences(data, pi + 1, high);
     }
 }
 
-// function to rearrange vector (find the partition point)
+// Function to rearrange vector (find the partition point)
 int partitionByIndex(vector<pair<int, pair<int,int>>> &data, int low, int high) {
     
-  // select the rightmost element as pivot
+  // Select the rightmost element as pivot
   int pivot = data[high].second.second;
 
-    // pointer for greater element
+    // Pointer for greater element
     int i = (low - 1);
 
-    // traverse each element of the vector
+    // Traverse each element of the vector
     // compare them with the pivot
     for (int j = low; j < high; j++) {
         if (data[j].second.second <= pivot) {
@@ -100,30 +100,31 @@ int partitionByIndex(vector<pair<int, pair<int,int>>> &data, int low, int high) 
             // swap it with the greater element pointed by i
             i++;
 
-            // swap element at i with element at j
+            // Swap element at i with element at j
             swap(data[i], data[j]);
         }
     }
 
-    // swap pivot with the smaller element at i + 1
+    // Swap pivot with the smaller element at i + 1
     swap(data[i + 1], data[high]);
 
-    // return the partition point
+    // Return the partition point
     return (i + 1);
 }
 
+// Quick sort algorithm to sort by index of numbers in ascending order
 vector<pair<int, pair<int,int>>> quickSortByIndex(vector<pair<int, pair<int,int>>> &data, int low, int high) {
   if (low < high) {
       
-    // find the pivot element such that
+    // Find the pivot element such that
     // elements smaller than pivot are on left of pivot
     // elements greater than pivot are on right of pivot
     int pi = partitionByIndex(data, low, high);
 
-    // recursive call on the left of pivot
+    // Recursive call on the left of pivot
     quickSortByIndex(data, low, pi - 1);
 
-    // recursive call on the right of pivot
+    // Recursive call on the right of pivot
     quickSortByIndex(data, pi + 1, high);
   }
   
