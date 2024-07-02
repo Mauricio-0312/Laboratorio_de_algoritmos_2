@@ -6,10 +6,10 @@ Explicacion de la solucion del problema:
 Se implementa una pila usando una lista doblemente enlazada circular. La pila tiene tres operaciones:
 1. Push: Agregar un elemento al tope de la pila
 2. Pop: Eliminar el tope de la pila
-3. Front: Obtener el elemento del tope de la pila
+3. getTop: Obtener el elemento del tope de la pila
 
 Se decidio implementar la pila usando una lista doblemente enlazada circular ya que esta estructura de datos permite agregar y
-eliminar elementos del frente y del final de la pila en tiempo constante.
+eliminar elementos del inicio y del final de la pila en tiempo constante.
 
 El codigo lee el numero de queries y luego procesa cada query. Si la query es de tipo 1, se agrega un elemento a la pila.
 Si la query es de tipo 2, se elimina el tope de la pila. Si la query es de tipo 3, se imprime el tope de la pila en 

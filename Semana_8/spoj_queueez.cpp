@@ -5,15 +5,15 @@ Carnet: 2010265
 Explicacion de la solucion del problema: 
 Se implementa una cola usando una lista doblemente enlazada circular. La cola tiene tres operaciones:
 1. Enqueue: Agregar un elemento al final de la cola
-2. Dequeue: Eliminar un elemento del frente de la cola
-3. Front: Obtener el elemento del frente de la cola
+2. Dequeue: Eliminar el elemento del frente de la cola
+3. getFront: Obtener el elemento del frente de la cola
 
 Se decidio implementar la cola usando una lista doblemente enlazada circular ya que esta estructura de datos permite agregar y
-eliminar elementos del frente y del final de la cola en tiempo constante.
+eliminar elementos del inicio y del final de la cola en tiempo constante.
 
 El codigo lee el numero de queries y luego procesa cada query. Si la query es de tipo 1, se agrega un elemento a la cola.
-Si la query es de tipo 2, se elimina un elemento de la cola. Si la query es de tipo 3, se imprime el elemento del frente de la cola
-en caso de no estar vacia, sino se imprime "Empty".
+Si la query es de tipo 2, se elimina el elemento del frente de la cola. Si la query es de tipo 3, se imprime el elemento del
+frente de la cola en caso de no estar vacia, sino se imprime "Empty".
 
 
 */
